@@ -52,7 +52,7 @@ def read(fname, returnId= False):
     proj_geom = astra.create_proj_geom('parallel3d', 1,1, dims[1], dims[0], angles)
 #Define the datatype   
     if dType == 1:
-        dataType= 'h' #the datatype is short (int32 in MATLAB)
+        dataType= 'h' #the datatype is short (int16 in MATLAB)
     elif dType == 2:
         dataType= 'f' #the datatype is float (single in MATLAB)
     else:
@@ -225,7 +225,7 @@ def write(fname, data, geometry, precision='float'):
     
 #Now write the data
     if dType == 1:
-        dataType= 'h' #the datatype is short (int32 in MATLAB)
+        dataType= 'h' #the datatype is short (int16 in MATLAB)
         data=np.short(data)
     else:
         dataType= 'f' #the datatype is float32 (single in MATLAB)
